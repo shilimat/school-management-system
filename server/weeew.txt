@@ -1,0 +1,125 @@
+const mongoose = require('mongoose');
+const Schema= mongoose.Schema;
+
+const studentSchema = new Schema({
+  studentId: {
+    type: String
+  },
+  firstName: {
+    type: String,
+    required: true
+  },
+  lastName: {
+    type: String,
+    required: true
+  },
+  email: {
+    type: String,
+    required: true
+  },
+  password: {
+    type: String,
+    required: true
+  },
+  dateOfBirth: {
+    type: Date,
+    required: true
+  },
+  gender: {
+    type: String,
+    required: true
+  },
+  address: {
+    street: {
+      type: String,
+      required: true
+    },
+    city: {
+      type: String,
+      required: true
+    },
+    state: {
+      type: String,
+      required: true
+    },
+    postalCode: {
+      type: String,
+      required: true
+    },
+    country: {
+      type: String,
+      required: true
+    }
+  },
+  contactNumber: {
+    type: String,
+    required: true
+  },
+  department: {
+    type: String,
+    required: true
+  },
+  gradeLevel: {
+    type: Number,
+    required: true
+  },
+  semester: {
+    type: Number,
+    required: true
+  },
+  section: {
+    type: String,
+    required: true
+  },
+  enrolledCourses: {
+    type: [String],
+    required: true
+  },
+  transcript: [
+    {
+      courseId: {
+        type: String,
+        required: true
+      },
+      grade: {
+        type: String,
+        required: true
+      }
+    }
+  ]
+  
+
+});
+
+module.exports= mongoose.model('Student', studentSchema);
+
+
+
+let updatedData = {
+        firstName: req.body.fname,
+        lastName: req.body.lastname,
+        email: req.body.email,
+        password: req.body.pass,
+        dateOfBirth: req.body.dob,
+        gender: req.body.gender,
+        address: {
+        street: req.body.address.street,
+        city: req.body.address.city,
+        state:req.body.address.state,
+        postalCode: req.body.address.postalcode,
+        country: req.body.address.country
+        },
+        phoneNumber: req.body.phone,
+        department: req.body.department,
+        gradeLevel: req.body.gradelevel,
+        semester: req.body.semester,
+        section: req.body.section,
+        enrolledCourses: [req.body.enrolledcourses],
+        transcript: [
+        {
+            courseId: req.body.transcript.courseid,
+            grade: req.body.transcript.grade
+        }
+        ]
+        
+     }

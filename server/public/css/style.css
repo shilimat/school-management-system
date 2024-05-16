@@ -1,0 +1,62 @@
+body{
+    background-image: url("../img/wallpaper.jpg");
+    background-position: center; /* Center the image */
+ 
+}
+.container{
+    width:60%;
+    margin: auto;
+    padding:20px;
+    box-shadow: 0px 0px 5px rgb(240, 246, 240);;
+}
+form{
+    width:90%;
+    margin-left:auto;
+    margin-right: auto;
+}
+
+.container h1{
+    color:green;
+    text-align: center;
+}
+
+.column-container{
+    display: flex;
+    flex-direction: row;
+    
+}
+.columns{
+    margin:20px;
+    width:200px;
+}
+
+form h2{
+    color: forestgreen;
+    text-align: center;
+}
+form label{
+    color:rgb(50, 178, 24);
+}
+form input{
+    padding: 5px;
+    background-color: rgb(164, 181, 165);
+    color:rgb(7, 68, 20);
+    border-radius: 3px;
+}
+form input[type="text"], form input[type="email"] {
+    width: 100%;
+}
+form input[type="submit"]{
+    width:90%;
+    color:azure;
+    background-color: green;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+form input[type="submit"]:hover{
+    background-color: rgb(27, 130, 137);
+    
+}
